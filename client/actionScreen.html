@@ -1,0 +1,26 @@
+<template name="actionScreen">
+  {{> header}}
+  {{> actions}}
+  {{> temp}}
+</template>
+
+<template name="actions">
+  <div class="container">
+    <button type="button" class="btn btn-danger uniformWidth">Quick Give $5</button>
+  </div>
+  <div class="container">
+    <button type="button" class="btn btn-danger uniformWidth">Donate Amount</button>
+  </div>
+  <div class="container">
+    <button type="button" class="btn btn-danger uniformWidth">About</button>
+  </div>
+</template>
+
+<template name="temp">
+  <div class="container">
+    <button type="button" class="btn btn-primary uniformWidth">Temp Button</button>
+  </div>
+  <div class="container">
+    <p>You've pressed the button {{counter}} times.</p>
+  </div>
+</template>

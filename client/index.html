@@ -1,0 +1,17 @@
+<head>
+  <title>The Phone App</title>
+</head>
+
+<body>
+  {{> docBody}}
+</body>
+
+<template name="docBody">
+  <div class="text-center">
+    {{> showScreen}}
+  </div>
+</template>
+
+<template name="showScreen">
+  {{>UI.dynamic template=nextScreen}}
+</template>
