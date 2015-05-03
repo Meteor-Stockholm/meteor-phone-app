@@ -10,7 +10,10 @@
     <button type="button" id="quick-give" class="btn btn-danger uniformWidth">Quick Give $5</button>
   </div>
   <div class="container">
-    <button type="button" class="btn btn-danger uniformWidth">Donate Amount</button>
+    <button type="button" class="btn btn-danger uniformWidth insertAmountButton">Donate Amount</button>
+    {{# if insertAmount}}
+    <input type="text" class="form-control uniformWidth" placeholder="Insert amount">
+    {{/if}}
   </div>
   <div class="container">
     <button type="button" class="btn btn-danger uniformWidth">About</button>

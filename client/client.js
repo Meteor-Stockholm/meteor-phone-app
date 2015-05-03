@@ -18,6 +18,12 @@ Template.showScreen.events({
     }
 });
 
+Template.actionScreen.events({
+  'click .insertAmountButton': function() {
+      Meteor.call('insertAmount', !this.insertAmount);
+    }
+});
+
 
 Session.setDefault('donatedAmount', 0);
 

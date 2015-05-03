@@ -8,3 +8,7 @@
 {
   width: 150px;
 }
+
+.form-control {
+  margin: 10px auto 0 auto;
+}
