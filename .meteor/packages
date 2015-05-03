@@ -10,3 +10,4 @@ insecure
 twbs:bootstrap
 accounts-password
 accounts-facebook
+accounts-ui
