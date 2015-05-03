@@ -18,9 +18,10 @@ Template.showScreen.events({
     }
 });
 
+
 Template.actionScreen.events({
   'click .insertAmountButton': function() {
-      Meteor.call('insertAmount', !this.insertAmount);
+      $('.insertAmountField').toggleClass('is-visible');
     }
 });
 
@@ -33,6 +34,12 @@ Template.actions.events({
         console.log('quick give');
         // increment the counter when button is clicked
         Session.set('donatedAmount', Session.get('donatedAmount') + 100);
+    },
+    'click .sendAmount': function() {
+
+      var insertedAmount = parseInt($('.form-control').val(), 10);
+
+      Session.set('donatedAmount', Session.get('donatedAmount') + insertedAmount);
     }
 });
 

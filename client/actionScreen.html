@@ -11,9 +11,13 @@
   </div>
   <div class="container">
     <button type="button" class="btn btn-danger uniformWidth insertAmountButton">Donate Amount</button>
-    {{# if insertAmount}}
-    <input type="text" class="form-control uniformWidth" placeholder="Insert amount">
-    {{/if}}
+    <div class="input-group uniformWidth insertAmountField">
+      <input type="text" class="form-control" placeholder="Summa">
+      <span class="input-group-btn">
+        <button class="btn btn-default sendAmount" type="button">Skicka</button>
+      </span>
+    </div>
+
   </div>
   <div class="container">
     <button type="button" class="btn btn-danger uniformWidth">About</button>

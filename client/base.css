@@ -7,8 +7,17 @@
 .uniformWidth
 {
   width: 150px;
+  margin: auto;
 }
 
-.form-control {
-  margin: 10px auto 0 auto;
+.insertAmountField {
+  display: none !important;
+}
+
+.insertAmountField.is-visible {
+  display: table !important;
+}
+
+.insertAmountField {
+  margin-top: 10px;
 }
