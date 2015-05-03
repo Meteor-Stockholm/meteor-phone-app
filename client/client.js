@@ -3,53 +3,48 @@ Template.showScreen.created = function() {
 };
 
 Template.showScreen.helpers({
-  nextScreen: function()
-  {
+  nextScreen: function() {
     return Session.get("currentScreen");
   }
 });
                             
 Template.showScreen.events({
-    'click *': function (event, tmpl) {
-        event.preventDefault();
-        event.stopImmediatePropagation();
-        //var next = ( Session.get("currentScreen") );
-        Session.set("currentScreen", "actionScreen");
-    }
+  'click *': function (event, tmpl) {
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    //var next = ( Session.get("currentScreen") );
+    Session.set("currentScreen", "actionScreen");
+  }
 });
-
-
-Template.actionScreen.events({
-  'click .insertAmountButton': function() {
-      $('.insertAmountField').toggleClass('is-visible');
-    }
-});
-
 
 Session.setDefault('donatedAmount', 0);
 
 Template.actions.events({
-    'click #quick-give': function() {
 
-        console.log('quick give');
-        // increment the counter when button is clicked
-        Session.set('donatedAmount', Session.get('donatedAmount') + 100);
-    },
-    'click .sendAmount': function() {
+  //Quick Donation
+  'click #quick-give': function() {
+    // increment the counter when button is clicked
+    Session.set('donatedAmount', Session.get('donatedAmount') + 100);
+  },
 
-      var insertedAmount = parseInt($('.form-control').val(), 10);
+  //Donate amount
+  'click .sendAmount': function() {
+    var insertedAmount = parseInt($('.form-control').val(), 10);
+    Session.set('donatedAmount', Session.get('donatedAmount') + insertedAmount);
+    $('.form-control').val('');
+  },
 
-      Session.set('donatedAmount', Session.get('donatedAmount') + insertedAmount);
-    }
+  //Show & hide donation input field
+  'click .insertAmountButton': function() {
+    $('.insertAmountField').toggleClass('is-visible');
+  }
 });
 
 Template.donationInfo.helpers({
-    amount: function()
-    {
-        return Session.get("donatedAmount");
-    }
+  amount: function() {
+    return Session.get("donatedAmount");
+  }
 });
-
 
 ///// Old example code /////
 
