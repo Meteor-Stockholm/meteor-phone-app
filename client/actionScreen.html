@@ -2,11 +2,12 @@
   {{> header}}
   {{> actions}}
   {{> temp}}
+  {{> donationInfo }}
 </template>
 
 <template name="actions">
   <div class="container">
-    <button type="button" class="btn btn-danger uniformWidth">Quick Give $5</button>
+    <button type="button" id="quick-give" class="btn btn-danger uniformWidth">Quick Give $5</button>
   </div>
   <div class="container">
     <button type="button" class="btn btn-danger uniformWidth">Donate Amount</button>
@@ -23,4 +24,11 @@
   <div class="container">
     <p>You've pressed the button {{counter}} times.</p>
   </div>
+</template>
+
+
+<template name="donationInfo">
+    <div class="container">
+        <p>You have donated a amount of {{amount}}$.</p>
+    </div>
 </template>

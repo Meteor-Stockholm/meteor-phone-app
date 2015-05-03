@@ -1,6 +1,6 @@
 Template.showScreen.created = function() {
     Session.set("currentScreen", "splashScreen");
-}
+};
 
 Template.showScreen.helpers({
   nextScreen: function()
@@ -18,6 +18,24 @@ Template.showScreen.events({
     }
 });
 
+
+Session.setDefault('donatedAmount', 0);
+
+Template.actions.events({
+    'click #quick-give': function() {
+
+        console.log('quick give');
+        // increment the counter when button is clicked
+        Session.set('donatedAmount', Session.get('donatedAmount') + 100);
+    }
+});
+
+Template.donationInfo.helpers({
+    amount: function()
+    {
+        return Session.get("donatedAmount");
+    }
+});
 
 
 ///// Old example code /////
