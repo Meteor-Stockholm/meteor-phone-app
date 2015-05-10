@@ -7,7 +7,7 @@ Template.showScreen.helpers({
     return Session.get("currentScreen");
   }
 });
-                            
+
 Template.showScreen.events({
   'click *': function (event, tmpl) {
     event.preventDefault();
@@ -30,8 +30,13 @@ Template.actions.events({
   //Donate amount
   'click .sendAmount': function() {
     var insertedAmount = parseInt($('.form-control').val(), 10);
-    Session.set('donatedAmount', Session.get('donatedAmount') + insertedAmount);
-    $('.form-control').val('');
+
+    if(insertedAmount) {
+      Session.set('donatedAmount', Session.get('donatedAmount') + insertedAmount);
+      $('.form-control').val('');
+    }else {
+      return false;
+    }
   },
 
   //Show & hide donation input field
