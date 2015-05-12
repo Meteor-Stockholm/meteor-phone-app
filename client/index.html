@@ -3,11 +3,13 @@
 </head>
 
 <body>
-  {{> docBody}}
+{{>loginModal}}
+{{> docBody}}
 </body>
 
 <template name="docBody">
   <div class="text-center">
+
     {{> showScreen}}
   </div>
 </template>
@@ -15,3 +17,6 @@
 <template name="showScreen">
   {{>UI.dynamic template=nextScreen}}
 </template>
+
+
+

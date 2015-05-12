@@ -42,8 +42,21 @@ Template.actions.events({
   //Show & hide donation input field
   'click .insertAmountButton': function() {
     $('.insertAmountField').toggleClass('is-visible');
+  },
+
+  'click #login': function() {
+    $('#loginModal').addClass('open');
   }
 });
+
+Template.loginModal.events({
+
+  'click #close-login-btn': function() {
+    $('#loginModal').removeClass('open');
+  },
+
+});
+
 
 Template.donationInfo.helpers({
   amount: function() {

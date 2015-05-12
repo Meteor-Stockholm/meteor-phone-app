@@ -8,6 +8,7 @@ meteor-platform
 autopublish
 insecure
 twbs:bootstrap
-accounts-password
 accounts-facebook
+accounts-twitter
 accounts-ui
+less
