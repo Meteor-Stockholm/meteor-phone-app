@@ -1,15 +1,15 @@
 <head>
   <title>The Phone App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
-{{>loginModal}}
 {{> docBody}}
 </body>
 
 <template name="docBody">
   <div class="text-center">
-
+    {{> loginModal}}
     {{> showScreen}}
   </div>
 </template>

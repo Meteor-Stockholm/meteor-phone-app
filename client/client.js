@@ -1,5 +1,5 @@
 Template.showScreen.created = function() {
-    Session.set("currentScreen", "splashScreen");
+  Session.set("currentScreen", "splashScreen");
 };
 
 Template.showScreen.helpers({
@@ -17,14 +17,14 @@ Template.showScreen.events({
   }
 });
 
-Session.setDefault('donatedAmount', 0);
+Session.setDefault("donatedAmount", 0);
 
 Template.actions.events({
 
   //Quick Donation
   'click #quick-give': function() {
     // increment the counter when button is clicked
-    Session.set('donatedAmount', Session.get('donatedAmount') + 100);
+    Session.set("donatedAmount", Session.get("donatedAmount") + 100);
   },
 
   //Donate amount
@@ -32,7 +32,7 @@ Template.actions.events({
     var insertedAmount = parseInt($('.form-control').val(), 10);
 
     if(insertedAmount) {
-      Session.set('donatedAmount', Session.get('donatedAmount') + insertedAmount);
+      Session.set("donatedAmount", Session.get("donatedAmount") + insertedAmount);
       $('.form-control').val('');
     }else {
       return false;
@@ -46,23 +46,31 @@ Template.actions.events({
 
   'click #login': function() {
     $('#loginModal').addClass('open');
+  },
+
+  'click #about': function() {
+    //console.log("Clicked About");
+    Session.set("currentScreen", "splashScreen");
+    console.log(Session.get("currentScreen"));
   }
+
+
+
 });
 
 Template.loginModal.events({
-
   'click #close-login-btn': function() {
     $('#loginModal').removeClass('open');
-  },
-
+  }
 });
-
 
 Template.donationInfo.helpers({
   amount: function() {
     return Session.get("donatedAmount");
   }
 });
+
+
 
 ///// Old example code /////
 

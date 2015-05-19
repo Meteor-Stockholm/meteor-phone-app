@@ -1,5 +1,3 @@
-
-
 Template.loginButtons.rendered = function()
 {
     if (!this.rendered){
@@ -7,7 +5,6 @@ Template.loginButtons.rendered = function()
 
         //$('.login-button').addClass('black');
         // $('.login-button').text('Login here!');
-
 
         this.rendered = true;
     }
